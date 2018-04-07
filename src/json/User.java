@@ -10,7 +10,7 @@ import java.util.Date;
 public class User {
   
   private String name;
-  private Integer age;
+  private static Integer age;
   private Date birthday;
   private String email;
 

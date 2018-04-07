@@ -32,29 +32,40 @@ public class UtilTest {
     public static void main(String[] args) {
       MyMap();
     }
-    
+    /*
+ * HashMap,LinkedHashMap,WeakHashMap对象的key、value值均可为null。
+ * TreeMap对象的key不可为null、value值可为null。TreeMap.compare报错
+ * Hashtable,ConcurrentHashMap对象的key、value值均不可为null。
+ * 
+ * TreeSet不能为null
+   * 
+  *ConcurrentHashMap代替同步的Map（Collections.synchronized（new HashMap()）），众所周知，HashMap是根据散列值分段存储的，
+     *同步Map在同步的时候锁住了所有的段，而ConcurrentHashMap加锁的时候根据散列值锁住了散列值锁对应的那段，因此提高了并发性能。
+  *ConcurrentHashMap也增加了对常用复合操作的支持，比如"若没有则添加"：putIfAbsent()，替换：replace()。这2个操作都是原子操作。
+  *CopyOnWriteArrayList和CopyOnWriteArraySet分别代替List和Set，主要是在遍历操作为主的情况下来代替同步的List和同步的Set，
+     *这也就是上面所述的思路：迭代过程要保证不出错，除了加锁，另外一种方法就是"克隆"容器对象。
+  *ConcurrentLinkedQuerue是一个先进先出的队列。它是非阻塞队列。
+  *ConcurrentSkipListMap可以在高效并发中替代SoredMap。
+  *ConcurrentSkipListSet可以在高效并发中替代SoredSet
+     */
   public static void MyMap() {
-    Map<String, String> map = new HashMap<String, String>();
-    map.put("1", "a");
-    map.put("2", "nnnnn");
-    Set<Entry<String, String>> entry = map.entrySet();
-    Iterator<Entry<String, String>> ite = entry.iterator();
-    while (ite.hasNext()) {
-      Entry<String, String> aa = ite.next();
-      System.out.println(aa.getKey() + ":" + aa.getValue());
+//    Map<String, String> map = new TreeMap<String, String>();
+//    map.put("1", "1");
+//    map.put("2", "nnnnn");
+//    Set<Entry<String, String>> entry = map.entrySet();
+//    Iterator<Entry<String, String>> ite = entry.iterator();
+//    while (ite.hasNext()) {
+//      Entry<String, String> aa = ite.next();
+//      System.out.println(aa.getKey() + ":" + aa.getValue());
+//          }
+    Set<String> list2 = new LinkedHashSet<String>();
+    list2.add(null);
+    list2.add(null);
+    list2.add("1");
+    Iterator<String> iteset = list2.iterator();
+    while (iteset.hasNext()) {
+      System.out.println(iteset.next());
           }
-    
-    Set<String> keys = map.keySet();
-    Iterator<String> itek = keys.iterator();
-    while (itek.hasNext()) {
-      System.out.println(itek.next());
-    }
-    
-    Collection<String> values = map.values();
-    Iterator<String> itev = values.iterator();
-    while (itev.hasNext()) {
-      System.out.println(itev.next());
-    }
   }
     
     public static void Util(){

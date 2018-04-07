@@ -1,6 +1,7 @@
 package json;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -22,9 +23,13 @@ public class JsonTest {
 //          ObjectMapper mapper = new ObjectMapper();
 //          User user = mapper.readValue(json, User.class);
 //          System.out.println(user.getName());
-          
-            JSON aa = JSON.fromObject(json);
-             System.out.println(aa.getInt("age"));
+            User user = new User();
+            user.setName("zhangsan");
+            user.setAge(20);
+            user.setBirthday(new Date());
+            user.setEmail("zhangsan@163.com");
+            JSON aa = JSON.fromObject(user);
+             System.out.println(aa.toString());
 
         }
       
