@@ -31,6 +31,9 @@ public class UtilTest {
   
     public static void main(String[] args) {
       MyMap();
+      
+            boolean flag = true;
+            Boolean a = Boolean.TRUE;
     }
     /*
  * HashMap,LinkedHashMap,WeakHashMap对象的key、value值均可为null。
@@ -49,15 +52,15 @@ public class UtilTest {
   *ConcurrentSkipListSet可以在高效并发中替代SoredSet
      */
   public static void MyMap() {
-//    Map<String, String> map = new TreeMap<String, String>();
-//    map.put("1", "1");
-//    map.put("2", "nnnnn");
-//    Set<Entry<String, String>> entry = map.entrySet();
-//    Iterator<Entry<String, String>> ite = entry.iterator();
-//    while (ite.hasNext()) {
-//      Entry<String, String> aa = ite.next();
-//      System.out.println(aa.getKey() + ":" + aa.getValue());
-//          }
+    Map<String, String> map = new HashMap<String, String>();
+    map.put("1", "1");
+    map.put("2", "nnnnn");
+    Set<Entry<String, String>> entry = map.entrySet();
+    Iterator<Entry<String, String>> ite = entry.iterator();
+    while (ite.hasNext()) {
+      Entry<String, String> aa = ite.next();
+      System.out.println(aa.getKey() + ":" + aa.getValue());
+          }
     Set<String> list2 = new LinkedHashSet<String>();
     list2.add(null);
     list2.add(null);

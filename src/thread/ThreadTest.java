@@ -1,6 +1,10 @@
 package thread;
 
 import java.util.Date;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *@auth wws
@@ -9,12 +13,22 @@ import java.util.Date;
  **/
 public class ThreadTest {
     public static void main(String[] args) {
-      Object o1 = new Object(); 
-System.out.println(o1);
-              String aa = "aa";
-              
+      ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(4, new ThreadFactory() {
+
+        AtomicInteger i = new AtomicInteger(1);
+
+        @Override
+        public Thread newThread(Runnable r) {
+          Thread th = new Thread(r);
+          th.setContextClassLoader(Thread.currentThread().getContextClassLoader());
+          th.setName("task-" + i.incrementAndGet());
+          return th;
+        }
+
+      });
+      executor.schedule(new TicketRunnable(), 1000, TimeUnit.MILLISECONDS);
+      
     }
-Date date = new Date();
       
         protected static void aa(){
       

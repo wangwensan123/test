@@ -30,20 +30,21 @@ import java.util.concurrent.locks.ReentrantLock;
  **/
 public class TaskTest {
   
-  private static Lock  lock  = new ReentrantLock();
   
   public static void main(String[] args) {
-
-    
+      Task.init(Runtime.getRuntime().availableProcessors());
       System.out.println("111");
+      System.out.println(" Task.activeThread()="+ Task.activeThread());
       new Task(){
         @Override
         public void onExecute() {
             System.out.println("----------");
           
                   }      
-      }.schedule(0);
+      }.schedule(3000);
 
+      System.out.println(" Task.activeThread()="+ Task.activeThread());
+//      Task.shutdown();
       System.out.println("222");
       
     

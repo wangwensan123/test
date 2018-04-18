@@ -18,17 +18,24 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Test {
   public static void main(String[] args) throws Exception
   {
-      Method method = new Test().getClass().getMethod("test", List.class);//这里的第二个参数，和getRawType()意义类似
+      Method method = new Test().getClass().getMethod("test", List.class,String.class);//这里的第二个参数，和getRawType()意义类似
       Type[] types = method.getGenericParameterTypes();
+      System.out.println(types[0].getTypeName());
+      System.out.println(types[1].getTypeName());
+      
       ParameterizedType pType = (ParameterizedType) types[0];
       Type type = pType.getActualTypeArguments()[0];
       System.out.println(type);
+
       //type是Type类型，但直接输出的不是具体Type的五种子类型，而是这五种子类型以及WildcardType具体表现形式
       System.out.println(type.getClass().getName());
+      
+      method.invoke(new Test(),null,"b");
   }
-  public  void test(List<ArrayList<String>[]> a){
-    
+  public  void test(List<ArrayList<String>[]> a,String b){
+    System.out.println("-----------b="+b);
   }
 //读者可将test中参数用相应类型代替
+  
 
 }

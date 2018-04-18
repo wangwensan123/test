@@ -10,16 +10,21 @@ import java.lang.reflect.Proxy;
  **/
 public class TestSearchHouse {
   public static void main(String[] args) {
-      Person person1 =  (Person) new HomeLink().getInstance(new Master1());
-      person1.searchHouse();
-      System.out.println("----------------");
+//      Person person1 =  (Person) new HomeLink().getInstance(new Master1());
+//      person1.searchHouse();
+//      System.out.println("----------------");
+//      
+//      InvocationHandler homelink =  new HomeLink(new Master());
+//      Person person2 = (Person) Proxy.newProxyInstance(Person.class.getClassLoader(), new Class[]{Person.class}, homelink);
+//      person2.searchHouse();
+//      
+//      System.out.println("----------------");
+//      Person person3 = new MasterProxy();
+//      person3.searchHouse();
       
-      InvocationHandler homelink =  new HomeLink(new Master());
-      Person person2 = (Person) Proxy.newProxyInstance(Person.class.getClassLoader(), new Class[]{Person.class}, homelink);
-      person2.searchHouse();
-      
       System.out.println("----------------");
-      Person person3 = new MasterProxy();
-      person3.searchHouse();
+      Person person4 = (Person)new DynaProxyCommon().getInstance(new Master1(), new DLogger(),"start","end");
+      person4.searchHouse();
+
   }
 }

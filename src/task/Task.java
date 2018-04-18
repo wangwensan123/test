@@ -234,6 +234,7 @@ public abstract class Task implements Runnable {
    * @see java.lang.Runnable#run()
    */
   final public void run() {
+        System.out.println("---------------run");
     int old = Thread.NORM_PRIORITY;
     try {
 
@@ -326,6 +327,7 @@ public abstract class Task implements Runnable {
    *          the thread num
    */
   public static void init(int threadNum) {
+        System.out.println("---------init");
     executor = new ScheduledThreadPoolExecutor(threadNum, new ThreadFactory() {
 
       AtomicInteger i = new AtomicInteger(1);
@@ -531,6 +533,9 @@ public abstract class Task implements Runnable {
     return executor.getActiveCount();
   }
 
+  public static void shutdown() {
+    executor.shutdown();
+  }
   /**
    * Idle thread.
    * 
