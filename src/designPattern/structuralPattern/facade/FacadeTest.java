@@ -5,7 +5,7 @@ package designPattern.structuralPattern.facade;
  *Facade（外观）模式为子系统中的各类（或结构与方法）提供一个简明一致的界面，隐藏子系统的复杂性，使子系统更加容易使用。
 
  **/
-public class Client {  
+public class FacadeTest {  
   
 
   public static void main(String[] args) {  

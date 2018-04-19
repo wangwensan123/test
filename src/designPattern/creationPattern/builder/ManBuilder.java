@@ -4,7 +4,7 @@ package designPattern.creationPattern.builder;
  *@date 2018年4月9日---下午1:13:07
  *
  **/
-public class ManBuilder implements PersonBuilder {  
+public class ManBuilder implements IBuilder {  
   
   Person person;  
  

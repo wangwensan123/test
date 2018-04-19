@@ -4,7 +4,7 @@ package designPattern.creationPattern.builder;
  *@date 2018年4月9日---下午1:12:40
  *
  **/
-public interface PersonBuilder {  
+public interface IBuilder {  
   void buildHead();  
   void buildBody();  
   void buildFoot();  

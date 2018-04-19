@@ -19,8 +19,10 @@ public class StrategyTest {
       MemberStrategy strategy = new AdvancedMemberStrategy();
               //创建环境
       Price price = new Price(strategy);
+      int p = 300;
+      System.out.println("图书的原价格为：" + p);
                //计算价格
-      double quote = price.quote(300);
+      double quote = price.quote(p);
       System.out.println("图书的最终价格为：" + quote);
   }
 

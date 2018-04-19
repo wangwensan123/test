@@ -5,7 +5,7 @@ package designPattern.creationPattern.builder;
  *
  **/
 public class PersonDirector {  
-  public Person constructPerson(PersonBuilder pb) {  
+  public Person constructPerson(IBuilder pb) {  
       //按照 身体--->头部--->四肢 的顺序创建人物  
       pb.buildHead();  
       pb.buildBody();  

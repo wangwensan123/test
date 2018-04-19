@@ -19,7 +19,7 @@ public class Test {
       System.out.println(person.getHead()); 
       System.out.println("--------------------------");
       
-      PersonBuilder aa = new ManBuilder();
+      IBuilder aa = new ManBuilder();
       aa.buildHead();
       aa.buildBody();  
       Person persona = aa.buildPerson();
