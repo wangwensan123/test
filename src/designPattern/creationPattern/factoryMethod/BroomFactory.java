@@ -6,7 +6,7 @@ import designPattern.creationPattern.simpleFactoryPattern.IMoveable;
 
 
 // 具体工厂
-public class BroomFactory extends VehicleFactory {
+public class BroomFactory extends AbstractFactory {
 
     @Override
     public IMoveable create() {

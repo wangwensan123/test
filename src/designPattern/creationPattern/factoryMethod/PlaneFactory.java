@@ -5,7 +5,7 @@ import designPattern.creationPattern.simpleFactoryPattern.Plane;
 
 
 // 具体工厂
-public class PlaneFactory extends VehicleFactory {
+public class PlaneFactory extends AbstractFactory {
 
     @Override
     public IMoveable create() {

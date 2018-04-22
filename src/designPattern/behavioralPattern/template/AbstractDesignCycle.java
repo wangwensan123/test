@@ -1,11 +1,11 @@
-package designPattern.behavioralPattern.templatemethod;
+package designPattern.behavioralPattern.template;
 /**
  *@auth wws
  *@date 2018年4月19日---下午1:10:31
  *
  **/
 //就是从需求分析到发布系统的一套设计流程  
-public abstract class DesignCycle {  
+public abstract class AbstractDesignCycle {  
 
   public abstract void needAnalysis();  
     

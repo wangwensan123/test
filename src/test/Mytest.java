@@ -2,6 +2,7 @@ package test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  *@auth wws
@@ -12,20 +13,13 @@ public class Mytest{
   
   
   public static void main(String[] args) {
-    List<String> name = new ArrayList<String>();
-    List<Integer> age = new ArrayList<Integer>();
-    List<Number> number = new ArrayList<Number>();
-    List<Test> test = new ArrayList<Test>();
-    
-    name.add("icon");
-    age.add(18);
-    number.add(314);
-    test.add(new Test());
-
-//    getUperNumber(name);//1
-    getUperNumber(age);//2
-    getUperNumber(number);//3
-//    getUperNumber(test);//4
+      Stack stack = new Stack();
+      stack.push("1");
+      stack.push("2");
+      stack.push("3");
+      stack.push("4");
+      Object aa = stack.pop();
+      System.out.println(aa);
    
 }
 

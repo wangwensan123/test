@@ -1,4 +1,4 @@
-package designPattern.behavioralPattern.templatemethod;
+package designPattern.behavioralPattern.template;
 /**
  *@auth wws
  *@date 2018年4月19日---下午1:11:00
@@ -7,7 +7,7 @@ package designPattern.behavioralPattern.templatemethod;
  *具体模板：继承抽象模板类并实现抽象方法
  *
  **/
-public class PaymentSystem extends DesignCycle{  
+public class PaymentSystem extends AbstractDesignCycle{  
   
   @Override  
   public void needAnalysis() {  

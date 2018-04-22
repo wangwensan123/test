@@ -1,11 +1,11 @@
-package designPattern.behavioralPattern.templatemethod;
+package designPattern.behavioralPattern.template;
 /**
  *@auth wws
  *@date 2018年4月19日---下午1:11:30
  *
  **/
 //物流系统类  
-public class LogisticSystem extends DesignCycle{  
+public class LogisticSystem extends AbstractDesignCycle{  
 
   @Override  
   public void needAnalysis() {  

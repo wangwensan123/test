@@ -7,7 +7,8 @@ package designPattern.structuralPattern.decorator;
 2、适用环境
 （1）在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。
 （2）处理那些可以撤消的职责。
-（3）当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展，为支持每一种组合将产生大量的 子类，使得子类数目呈爆炸性增长。另一种情况可能是因为类定义被隐藏，或类定义不能用于生成子类。
+（3）当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展，为支持每一种组合将产生大量的 子类，
+          使得子类数目呈爆炸性增长。另一种情况可能是因为类定义被隐藏，或类定义不能用于生成子类。
 3、参与者
     1.Component（被装饰对象的基类）
       定义一个对象接口，可以给这些对象动态地添加职责。
@@ -21,12 +22,19 @@ package designPattern.structuralPattern.decorator;
 public class DecoratorTest {
 
   public static void main(String[] args) {
-      Man man = new Man();
-      ManDecoratorA md1 = new ManDecoratorA();
-      ManDecoratorB md2 = new ManDecoratorB();
+      IPerson man = new Man();
+      man.eat();
+      System.out.println("------------------------");
       
+      Decorator md1 = new ManDecoratorA();
       md1.setPerson(man);
+      md1.eat();
+      System.out.println("------------------------");
+      
+      Decorator md2 = new ManDecoratorB();
       md2.setPerson(md1);
       md2.eat();
+      
+
   }
 }
