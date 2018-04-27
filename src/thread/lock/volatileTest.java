@@ -1,4 +1,4 @@
-package thread.readfile;
+package thread.lock;
 /**
  *@auth wws
  *@date 2018年3月28日---上午11:48:20

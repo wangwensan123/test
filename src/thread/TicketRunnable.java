@@ -1,9 +1,8 @@
 package thread;
 
-import java.util.concurrent.AbstractExecutorService;
 import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -30,7 +29,7 @@ public class TicketRunnable implements Runnable{
          }
     
    try {
-     Thread.sleep(4000);
+     Thread.sleep(1000);
    } catch (InterruptedException e) {
      // TODO Auto-generated catch block
      e.printStackTrace();
@@ -60,7 +59,7 @@ public class TicketRunnable implements Runnable{
        TicketRunnable myTask = new TicketRunnable();
        executor.execute(myTask);
        System.out.println("线程池中线程数目："+executor.getPoolSize()+"，队列中等待执行的任务数目："+executor.getQueue().size()+"，已执行完别的任务数目："+executor.getCompletedTaskCount());
-          }
+    }
     executor.shutdown();
  }
  
